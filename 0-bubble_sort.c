@@ -3,41 +3,39 @@
 
 /**
  * bubble_sort - sorts an array using bubble sort
- * 
- * @array: the array to be sorted 
+ *
+ * @array: the array to be sorted
  * @size: the number of elements in array
 */
 
-
 void bubble_sort(int *array, size_t size)
 {
-    size_t pass, index;
-    int temp;
-    int swapped;
+	size_t iteration;
+	size_t index;
+	int temp_var;
+	int swapped;
 
-    if (!array || size < 2)
-        return;
+	if (!array || size < 2)
+	{
+		return;
+	}
 
-    for (pass = 0; pass < size - 1; pass++)
-    {
-        swapped = 0; // Flag to track whether any swaps occurred in this pass
+	for (iteration = 0; iteration < size - 1; iteration++)
+	{
+		swapped = 0;
 
-        for (index = 0; index < size - 1 - pass; index++)
-        {
-            if (array[index] > array[index + 1])
-            {
-                // Swap elements if they are out of order
-                temp = array[index];
-                array[index] = array[index + 1];
-                array[index + 1] = temp;
+		for (index = 0; index < size - 1 - iteration; index++)
+		{
+			temp_var = array[index];
+			array[index] = array[index + 1];
+			array[index + 1] = temp_var;
 
-                swapped = 1; // Set the flag to indicate a swap occurred
-                print_array(array, size); // Print the array after the swap
-            }
-        }
-
-        // If no swaps were made in this pass, the array is already sorted
-        if (swapped == 0)
-            break;
-    }
+			swapped = 1;
+			print_array(array, size);
+		}
+		if (swapped == 0)
+		{
+			break;
+		}
+	}
 }
