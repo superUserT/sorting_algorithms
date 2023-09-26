@@ -1,6 +1,5 @@
 #include "sort.h"
 
-#include "sort.h"
 
 /**
  * insertion_sort_list - Sorts list using the Insertion sort.
